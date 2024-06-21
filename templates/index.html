@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频处理工具</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">视频处理工具1.0</h2>
+    <h5 class="text-center mb-4">注意：当前仅支持单人使用，多人同时使用会出现异常</h5>
+    <form id="videoForm" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label for="videoFile">视频文件：</label>
+            <input type="file" class="form-control" id="videoFile" name="videoFile" accept="video/*">
+        </div>
+        <div class="form-group mb-3">
+            <button class="btn btn-info" type="button" onclick="get_video_info()">视频信息</button>
+            <button class="btn btn-warning" type="button" onclick="compress_video_logic()">压缩视频</button>
+            <button class="btn btn-secondary ml-2" type="button" onclick="clearLog()">清屏</button>
+        </div>
+    </form>
+    <div class="form-group mb-3">
+        <label for="logArea">日志：</label>
+        <textarea class="form-control" id="logArea" rows="10" readonly></textarea>
+    </div>
+    <div class="form-group">
+        <label for="downloadArea">下载链接：</label>
+        <div id="downloadArea"></div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../static/js/script.js"></script>
+</body>
+</html>
